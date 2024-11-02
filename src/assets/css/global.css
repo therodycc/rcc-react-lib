@@ -1,2 +1,5 @@
 @import url('./material-dashboard.css');
 @import url('./material-dashboard.min.css');
+@import url('../css/loading-destructuring.css');
+@import url('../css/loading-points.css');
+@import url('../css/loading-square.css');

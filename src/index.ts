@@ -1,1 +1,2 @@
-export { RccButton } from "./button";
+
+export * from './components'

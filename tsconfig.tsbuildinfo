@@ -1,1 +1,1 @@
-{"root":["./src/index.ts","./src/button/index.tsx"],"version":"5.6.3"}
+{"root":["./src/index.ts","./src/components/index.tsx","./src/components/button/index.tsx","./src/components/loading/index.tsx","./src/components/loading/loading-points.tsx","./src/components/loading/loading-square-destructuring.tsx","./src/components/table/index.tsx","./src/components/table/loading-table.tsx","./src/components/table/t-body.tsx","./src/components/table/t-head.tsx","./src/components/table/table-empty.tsx","./src/components/table/table.interface.ts"],"version":"5.6.3"}
