@@ -13,11 +13,12 @@ export default defineConfig({
       fileName: "rcc-react-lib",
     },
     rollupOptions: {
-      external: ["react", "react-dom", "react/jsx-runtime"],
+      external: ["react", "react-dom", "react/jsx-runtime", "next"],
       output: {
         globals: {
           react: "React",
-          "react-dom": "ReactDom"
+          "react-dom": "ReactDom",
+          next: "Next",
         },
       },
     },
