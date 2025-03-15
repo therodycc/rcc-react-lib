@@ -23,4 +23,9 @@ export default defineConfig({
       },
     },
   },
+  // Allowing Link element on storybook
+  define: {
+    global: "window", 
+    "process.env": {}, // Evita el error de `process is not defined`
+  },
 });

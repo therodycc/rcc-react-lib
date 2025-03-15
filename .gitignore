@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# Storybook build outputs
+*storybook.log
+
+.storybook-out/
+# Storybook build directories (si usas Vite o Webpack para Storybook)
+node_modules/.cache/
+storybook-static/
