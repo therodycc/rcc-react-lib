@@ -8,25 +8,28 @@ import {
   faPiggyBank,
 } from "@fortawesome/free-solid-svg-icons";
 import "../assets/css/global.css";
-import { RccLayout } from "../layout/Layout";
+import { RccAside } from "../layout/aside/index";
 
 const meta = {
-  title: "Example/RccLayout",
-  component: RccLayout,
+  title: "Example/RccAside",
+  component: RccAside,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
   argTypes: {},
-  args: { handleShowAsideBar: fn(), leftSection: "", rightSection: "" },
-} satisfies Meta<typeof RccLayout>;
+  args: {
+    handleSelected: fn(),
+    logout: fn(),
+  },
+} satisfies Meta<typeof RccAside>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Layout: Story = {
+export const Aside: Story = {
   args: {
-    asideOptions: [
+    options: [
       {
         icon: faHome,
         title: "Dashboard",
@@ -52,8 +55,5 @@ export const Layout: Story = {
         link: "/reports",
       },
     ],
-    handleShowAsideBar: fn(),
-    leftSection: "",
-    rightSection: "",
   },
 };

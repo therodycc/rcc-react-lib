@@ -1,51 +1,29 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { usePathname } from "next/navigation";
-// import { NextRouter, useRouter } from "next/router";
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import { RccButton } from "../../components/button";
 import { AsideOptionsI } from "../aside.interface";
 
 interface AsideProps {
-  asideOptions: AsideOptionsI[];
+  options: AsideOptionsI[];
+  logout: Function;
+  handleSelected: Function;
 }
 
-export const RccAside = ({ asideOptions }: AsideProps) => {
-  const pathname = usePathname();
-  // const router: NextRouter = useRouter();
-  const [options, setOptions] = useState<AsideOptionsI[]>([]);
-
-  useEffect(() => {
-    handleSelected(pathname);
-  }, [pathname]);
-
-  const handleSelected = useCallback(
-    (path: string) => {
-      setOptions(
-        asideOptions.map((opt) => ({
-          ...opt,
-          active: path === opt.link,
-        }))
-      );
-      // router.push(path);
-    },
-    [asideOptions, setOptions]
-  );
-
-  const logout = useCallback(() => {
-    console.log("logout working");
-  }, []);
-
+export const RccAside = ({ options, logout, handleSelected }: AsideProps) => {
   return (
     <React.Fragment>
       <aside className="sidebar-show sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-white">
         <div className="collapse navbar-collapse h-auto">
-          <ul className="navbar-nav row">
+          <div className="mx-6 mt-3 rounded-lg">
+            <img className="img-thumbnail" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="" />
+          </div>
+          <ul className="navbar-nav row mx-3 mt-5">
             {options.map((item) => (
               <li key={item.link} className="col-12">
                 <RccButton
                   fullWidth
                   bgClass={item.active ? "info" : "light"}
-                  action={() => handleSelected(item.link)}
+                  action={handleSelected}
                 >
                   <FontAwesomeIcon icon={item.icon} />
                   <span className="nav-link-text ms-1">{item.title}</span>

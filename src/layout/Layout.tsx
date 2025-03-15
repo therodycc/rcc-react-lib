@@ -8,6 +8,9 @@ interface RccLayoutProps {
   rightSection: ReactNode;
   leftSection: ReactNode;
   handleShowAsideBar: MouseEventHandler<HTMLDivElement>;
+
+  logout: Function;
+  handleSelected: Function;
 }
 
 export const RccLayout = ({
@@ -16,11 +19,17 @@ export const RccLayout = ({
   leftSection,
   rightSection,
   handleShowAsideBar,
+  handleSelected,
+  logout,
 }: PropsWithChildren<RccLayoutProps>) => {
   return (
     <>
       <div className="g-sidenav-show bg-light">
-        <RccAside asideOptions={asideOptions} />
+        <RccAside
+          options={asideOptions}
+          logout={logout}
+          handleSelected={handleSelected}
+        />
         <main
           className="main-content position-relative  border-radius-lg bg-light d-flex flex-column overflow-scroll"
           style={{ height: "100vh" }}
