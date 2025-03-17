@@ -15,7 +15,11 @@ export const RccAside = ({ options, logout, handleSelected }: AsideProps) => {
       <aside className="sidebar-show sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-white">
         <div className="collapse navbar-collapse h-auto">
           <div className="mx-6 mt-3 rounded-lg">
-            <img className="img-thumbnail" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="" />
+            <img
+              className="img-thumbnail"
+              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+              alt=""
+            />
           </div>
           <ul className="navbar-nav row mx-3 mt-5">
             {options.map((item) => (
@@ -23,7 +27,7 @@ export const RccAside = ({ options, logout, handleSelected }: AsideProps) => {
                 <RccButton
                   fullWidth
                   bgClass={item.active ? "info" : "light"}
-                  action={handleSelected}
+                  action={() => handleSelected(item.link)}
                 >
                   <FontAwesomeIcon icon={item.icon} />
                   <span className="nav-link-text ms-1">{item.title}</span>
