@@ -9,7 +9,7 @@ export const RccNav = ({ rightSection, leftSection }: NavProps) => {
   return (
     <React.Fragment>
       <div
-        className="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
+        className="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 bg-white"
         style={{ zIndex: 10 }}
       >
         {leftSection}
